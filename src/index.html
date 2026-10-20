@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success IT School | Home</title>
+  <meta name="description" content="Master an IT Profession from Scratch and Get Your First Job Offer. Practical courses taught by top industry mentors.">
+</head>
+<body>
+  <%- include('partials/headerFull.ejs', { active: 'courses' }) %>  
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <span class="badge">🔥 Admissions Open for 2026</span>
+        
+        <h1 id="hero-title" class="hero__title">
+          Master an IT Profession from Scratch and Get Your First Job Offer
+        </h1>
+        
+        <p class="hero__description">
+          Practical courses taught by top industry mentors. Build a real-world portfolio and get fully prepared for technical interviews in 4 months.
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--primary" href="courses.html">Explore Courses</a>
+          <a class="button button--secondary" href="details.html">View Curriculum</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img 
+          class="hero__img" 
+          src="assets/img/hero_photo.webp" 
+          srcset="assets/img/hero_photo.webp 640w" 
+          sizes="(min-width: 1280px) 580px, 100vw"
+          width="640" 
+          height="400" 
+          alt="Students learning in IT classroom" 
+          loading="eager"
+        >
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Key statistics">
+      <ul class="stats__list">
+        <li class="stats__item">
+          <strong class="stats__value">1500+</strong>
+          <span class="stats__label">Graduates Employed</span>
+        </li>
+        <li class="stats__item">
+          <strong class="stats__value">95%</strong>
+          <span class="stats__label">Hiring Success Rate</span>
+        </li>
+        <li class="stats__item">
+          <strong class="stats__value">4.9 / 5</strong>
+          <span class="stats__label">Average Student Rating</span>
+        </li>
+        <li class="stats__item">
+          <strong class="stats__value">20+</strong>
+          <span class="stats__label">Partner IT Companies</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="benefits" aria-labelledby="benefits-title">
+      <header class="benefits__header">
+        <h2 id="benefits-title" class="benefits__title">Why Learn With Us</h2>
+        <p class="benefits__subtitle">Everything you need to go from a complete beginner to a hired tech professional.</p>
+      </header>
+
+      <ol class="benefits__list">
+        <li class="benefits__item">
+          <article class="card-benefit">
+            <span class="card-benefit__number">01</span>
+            <h3 class="card-benefit__title">Real-World Projects</h3>
+            <p class="card-benefit__text">Build 3+ commercial-grade portfolio projects during your studies to showcase to employers.</p>
+          </article>
+        </li>
+        <li class="benefits__item">
+          <article class="card-benefit">
+            <span class="card-benefit__number">02</span>
+            <h3 class="card-benefit__title">1-on-1 Mentorship</h3>
+            <p class="card-benefit__text">Get personal code reviews, detailed feedback, and answers to your questions from Senior engineers.</p>
+          </article>
+        </li>
+        <li class="benefits__item">
+          <article class="card-benefit">
+            <span class="card-benefit__number">03</span>
+            <h3 class="card-benefit__title">Career Guarantee</h3>
+            <p class="card-benefit__text">Prepare your CV, practice mock technical interviews, and get direct referrals to partner companies.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <section class="courses-preview" aria-labelledby="courses-title">
+      <header class="courses-preview__header">
+        <h2 id="courses-title" class="courses-preview__title">Explore Popular Courses</h2>
+        <p class="courses-preview__subtitle">Choose from high-demand IT directions and launch your new career.</p>
+      </header>
+
+      <ul class="courses-preview__list">
+        <li>
+          <article class="course-card">
+            <div class="course-card__meta">
+              <span class="badge badge--level">Beginner</span>
+              <span class="course-card__duration">4 Months</span>
+            </div>
+            <h3 class="course-card__title">Python Developer</h3>
+            <p class="course-card__description">
+              Build Machine Learning models, analyze big data, and write automated Python scripts.
+            </p>
+            <div class="course-card__footer">
+              <span class="course-card__price">$100/month</span>
+              <a class="button button--primary" href="details.html">Learn More</a>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="course-card">
+            <div class="course-card__meta">
+              <span class="badge badge--level">Beginner</span>
+              <span class="course-card__duration">4 Months</span>            
+            </div>
+            <h3 class="course-card__title">Game Developer</h3>
+            <p class="course-card__description">
+              Create 2D/3D games in Unity, write interactive C# scripts, and build game mechanics.
+            </p>
+            <div class="course-card__footer">
+              <span class="course-card__price">$100/month</span>
+              <a class="button button--primary" href="details.html">Learn More</a>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="course-card">
+            <div class="course-card__meta">
+              <span class="badge badge--level">Beginner</span>
+              <span class="course-card__duration">4 Months</span>
+            </div>
+            <h3 class="course-card__title">Web Developer</h3>
+            <p class="course-card__description">
+              Build responsive websites from scratch using HTML5, CSS3, and interactive JavaScript.
+            </p>
+            <div class="course-card__footer">
+              <span class="course-card__price">$100/month</span>
+              <a class="button button--primary" href="details.html">Learn More</a>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section class="journey" aria-labelledby="journey-title">
+      <header class="journey__header">
+        <h2 id="journey-title" class="journey__title">How Your Learning Journey Works</h2>
+        <p class="journey__subtitle">A structured 4-step path designed for maximum practical skill acquisition.</p>
+      </header>
+
+      <ol class="journey__steps">
+        <li class="journey__step">
+          <span class="journey__number">01</span>
+          <h3 class="journey__step-title">Watch &amp; Learn</h3>
+          <p class="journey__step-text">Interactive video lessons, code walkthroughs, and live Q&amp;A webinars.</p>
+        </li>
+
+        <li class="journey__step">
+          <span class="journey__number">02</span>
+          <h3 class="journey__step-title">Practice &amp; Code</h3>
+          <p class="journey__step-text">Solve real coding challenges and receive individual mentor feedback on GitHub.</p>
+        </li>
+
+        <li class="journey__step">
+          <span class="journey__number">03</span>
+          <h3 class="journey__step-title">Build Portfolio</h3>
+          <p class="journey__step-text">Develop a complex capstone project that proves your job readiness.</p>
+        </li>
+
+        <li class="journey__step">
+          <span class="journey__number">04</span>
+          <h3 class="journey__step-title">Get Hired</h3>
+          <p class="journey__step-text">Pass mock technical interviews, polish your CV, and start receiving job offers.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="experts" aria-labelledby="experts-title">
+      <header class="experts__header">
+        <h2 id="experts-title" class="experts__title">Learn From Top Industry Experts</h2>
+        <p class="experts__subtitle">Gain practical skills from Senior developers and Tech Leads working in global IT companies.</p>
+      </header>
+
+      <ul class="experts__list">
+        <li>
+          <article class="expert-card">
+            <img 
+              class="expert-card__avatar" 
+              src="assets/img/expert-1.webp" 
+              width="80" 
+              height="80" 
+              alt="" 
+              loading="lazy"
+            >
+            <h3 class="expert-card__name">Anastasiia Sushko</h3>
+            <p class="expert-card__role">Senior Tech Lead at PotimPridumaem International</p>
+            <p class="expert-card__exp">1+ years in Commercial Software Dev</p>
+          </article>
+        </li>
+
+        <li>
+          <article class="expert-card">
+            <img 
+              class="expert-card__avatar" 
+              src="assets/img/expert-2.webp" 
+              width="80" 
+              height="80" 
+              alt="" 
+              loading="lazy"
+            >
+            <h3 class="expert-card__name">Denys Mokhyr</h3>
+            <p class="expert-card__role">Senior Tech Lead at PotimPridumaem International</p>
+            <p class="expert-card__exp">1+ years in Frontend Architecture experience.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <%- include('partials/footerFull.ejs') %>
+
+</body>
+</html>

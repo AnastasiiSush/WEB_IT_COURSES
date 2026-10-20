@@ -1,0 +1,13 @@
+<header class="header">
+  <a class="header__logo" href="index.html">Success IT School</a>
+  <nav class="nav" aria-label="Main navigation">
+    <ul class="nav__list">
+      <li>
+        <a class="nav__link <%= (typeof active !== 'undefined' && active === 'courses') ? 'nav__link--active' : '' %>" href="courses.html">Courses</a>
+      </li>
+      <li><a class="nav__link" href="index.html#about">About us</a></li>
+      <li><a class="nav__link" href="index.html#contacts">Contacts</a></li>
+    </ul>
+  </nav>
+  <a class="button button--primary" href="courses.html">Explore Courses</a>
+</header>

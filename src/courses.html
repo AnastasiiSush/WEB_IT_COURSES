@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses Catalog | Success IT School</title>
+  <meta name="description" content="Explore high-demand programming, design, and analytics courses with 1-on-1 mentorship.">
+</head>
+<body>
+
+<%- include('partials/headerFull.ejs', { active: 'courses' }) %>  
+  <main id="main" class="catalog-page">
+    <section class="catalog-hero" aria-labelledby="catalog-title">
+      <h1 id="catalog-title" class="catalog-hero__title">Choose Your Career Path in IT</h1>
+      <p class="catalog-hero__subtitle">
+        Explore high-demand programming, design, and analytics courses with 1-on-1 mentorship.
+      </p>
+
+      <div class="catalog-hero__toolbar">
+        <form class="search-form" action="/search" method="get" role="search">
+          <label for="course-search" class="visually-hidden">Search courses</label>
+          <input 
+            id="course-search" 
+            name="q" 
+            type="search" 
+            class="search-form__input" 
+            placeholder="Search courses..."
+          >
+        </form>
+
+        <nav class="quick-filters" aria-label="Quick category filters">
+          <button type="button" class="tag-button tag-button--active">All Courses</button>
+          <button type="button" class="tag-button">Python</button>
+          <button type="button" class="tag-button">GameDev</button>
+          <button type="button" class="tag-button">Web</button>
+          <button type="button" class="tag-button">QA</button>
+        </nav>
+      </div>
+    </section>
+
+    <div class="catalog-layout">
+      <aside class="catalog-filters" aria-label="Course filters">
+        <div class="catalog-filters__header">
+          <h2 class="catalog-filters__title">Filters</h2>
+          <button type="reset" form="filters-form" class="catalog-filters__reset">Reset all</button>
+        </div>
+
+        <form id="filters-form" class="filters-form" action="/courses" method="get">
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Direction</legend>
+            <ul class="filters-form__list">
+              <li>
+                <input type="checkbox" id="dir-web" name="direction" value="web">
+                <label for="dir-web">Web</label>
+              </li>
+              <li>
+                <input type="checkbox" id="dir-python" name="direction" value="python">
+                <label for="dir-python">Python</label>
+              </li>
+              <li>
+                <input type="checkbox" id="dir-vibecoding" name="direction" value="vibecoding">
+                <label for="dir-vibecoding">VibeCoding</label>
+              </li>
+              <li>
+                <input type="checkbox" id="dir-gamedev" name="direction" value="gamedev">
+                <label for="dir-gamedev">GameDev</label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Level</legend>
+            <ul class="filters-form__list">
+              <li>
+                <input type="checkbox" id="lvl-beginner" name="level" value="beginner">
+                <label for="lvl-beginner">Beginner</label>
+              </li>
+              <li>
+                <input type="checkbox" id="lvl-intermediate" name="level" value="intermediate">
+                <label for="lvl-intermediate">Intermediate</label>
+              </li>
+              <li>
+                <input type="checkbox" id="lvl-advanced" name="level" value="advanced">
+                <label for="lvl-advanced">Advanced</label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Format</legend>
+            <ul class="filters-form__list">
+              <li>
+                <input type="checkbox" id="fmt-mentoring" name="format" value="mentoring">
+                <label for="fmt-mentoring">With 1-on-1 Mentoring</label>
+              </li>
+              <li>
+                <input type="checkbox" id="fmt-selfpaced" name="format" value="self-paced">
+                <label for="fmt-selfpaced">Self-Paced</label>
+              </li>
+              <li>
+                <input type="checkbox" id="fmt-guarantee" name="format" value="guarantee">
+                <label for="fmt-guarantee">Career Guarantee</label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Duration</legend>
+            <ul class="filters-form__list">
+              <li>
+                <input type="checkbox" id="dur-1-3" name="duration" value="1-3">
+                <label for="dur-1-3">1–3 Months</label>
+              </li>
+              <li>
+                <input type="checkbox" id="dur-4-6" name="duration" value="4-6">
+                <label for="dur-4-6">4–6 Months</label>
+              </li>
+              <li>
+                <input type="checkbox" id="dur-6plus" name="duration" value="6plus">
+                <label for="dur-6plus">6+ Months</label>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </aside>
+
+      <section class="catalog-results" aria-labelledby="results-count">
+        <div class="catalog-results__header">
+          <h2 id="results-count" class="catalog-results__count">Showing <%= courses.length %> courses</h2>
+          
+          <div class="sort-control">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select" name="sort">
+              <option value="popularity">Popularity</option>
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <ul class="courses-grid">
+          <% courses.forEach(function(course) { %>
+  <%- include('partials/card.ejs', { course: course }) %>
+<% }); %>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <%- include('partials/footerFull.ejs') %>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<article class="course-card">
+  <div class="course-card__header">
+    <span class="badge"><%= course.level %></span>
+    <span class="course-card__duration"><%= course.duration %></span>
+  </div>
+
+  <div class="course-card__content">
+    <h3 class="course-card__title"><%= course.title %></h3>
+    <p class="course-card__description"><%= course.description %></p>
+
+    <% if (course.tags && course.tags.length > 0) { %>
+      <div class="course-card__tags">
+        <% course.tags.forEach(function(tag) { %>
+          <span class="tag"><%= tag %></span>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+
+  <hr class="course-card__divider">
+
+  <div class="course-card__footer">
+    <span class="course-card__price"><%= course.price %></span>
+    <a class="button button--primary" href="details.html">Learn More</a>
+</div>
+</article>

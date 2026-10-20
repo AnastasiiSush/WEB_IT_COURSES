@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — VibeCoding | Success IT School</title>
+  <meta name="description" content="Complete your enrollment for the VibeCoding course at Success IT School.">
+</head>
+<body>
+  <%- include('partials/headerMin.ejs', { active: 'courses' }) %>  
+
+  <main id="main" class="checkout-page">
+    <div class="checkout-page__container">
+      <form class="checkout-form" action="/process-checkout" method="post">
+        <h1 class="visually-hidden">Checkout Form</h1>
+
+        <fieldset class="checkout-form__step">
+          <legend class="checkout-form__title">1. Personal Information</legend>
+          <div class="checkout-form__grid checkout-form__grid--2col">
+            <div class="form-group">
+              <label for="first-name" class="visually-hidden">First Name</label>
+              <input 
+                type="text" 
+                id="first-name" 
+                name="first_name" 
+                class="form-input" 
+                placeholder="e.g. Anastasiia" 
+                required
+              >
+            </div>
+            <div class="form-group">
+              <label for="last-name" class="visually-hidden">Last Name</label>
+              <input 
+                type="text" 
+                id="last-name" 
+                name="last_name" 
+                class="form-input" 
+                placeholder="e.g. Sushko" 
+                required
+              >
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="checkout-form__step">
+          <legend class="checkout-form__title">2. Email Address</legend>
+          <div class="form-group">
+            <label for="email" class="visually-hidden">Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="sushkoanastasiia@gmail.com" 
+              aria-describedby="email-hint" 
+              required
+            >
+            <p id="email-hint" class="form-hint">Your access and receipt will be sent to this email.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="checkout-form__step">
+          <legend class="checkout-form__title">3. Select Payment Option</legend>
+          <div class="payment-options">
+            
+            <label class="payment-option">
+              <input 
+                type="radio" 
+                name="payment_option" 
+                value="full" 
+                class="payment-option__radio" 
+                checked
+              >
+              <span class="payment-option__body">
+                <span class="payment-option__header">
+                  <span class="payment-option__label">Pay Full Amount ($400)</span>
+                  <span class="badge badge--save">Save 15%</span>
+                </span>
+                <span class="payment-option__desc">
+                  One-time payment. Full access to all 12 modules immediately.
+                </span>
+              </span>
+            </label>
+
+            <label class="payment-option">
+              <input 
+                type="radio" 
+                name="payment_option" 
+                value="installment" 
+                class="payment-option__radio"
+              >
+              <span class="payment-option__body">
+                <span class="payment-option__header">
+                  <span class="payment-option__label">Monthly Installments ($100 / mo)</span>
+                </span>
+                <span class="payment-option__desc">
+                  Pay in 4 easy monthly payments. Cancel anytime.
+                </span>
+              </span>
+            </label>
+
+          </div>
+        </fieldset>
+
+        <fieldset class="checkout-form__step">
+          <legend class="checkout-form__title">4. Payment Method &amp; Action</legend>
+          
+          <div class="payment-methods">
+            <button type="submit" name="payment_method" value="apple_pay" class="button button--pay button--apple">
+              Apple Pay
+            </button>
+            <button type="submit" name="payment_method" value="card" class="button button--pay button--card">
+              Credit Card
+            </button>
+            <button type="submit" name="payment_method" value="google_pay" class="button button--pay button--google">
+              Google Pay
+            </button>
+          </div>
+
+          <div class="checkout-form__submit-block">
+            <button type="submit" class="button button--primary button--large">
+              Complete Enrollment — $400
+            </button>
+            <p class="security-note">
+              <span aria-hidden="true">&#128274;</span> 
+              Encrypted 256-bit SSL Connection. Your data is 100% secure.
+            </p>
+          </div>
+        </fieldset>
+      </form>
+
+      <aside class="order-summary" aria-labelledby="summary-title">
+        <h2 id="summary-title" class="order-summary__title">Order Summary</h2>
+        <h3 class="order-summary__course-name">VibeCoding</h3>
+        <p class="order-summary__details">4 Months &bull; 16 Modules &bull; Certificate included</p>
+
+        <hr class="order-summary__divider">
+
+        <dl class="order-summary__calc">
+          <div class="order-summary__row">
+            <dt>Course Price:</dt>
+            <dd>$400</dd>
+          </div>
+          <div class="order-summary__row order-summary__row--discount">
+            <dt>Student Discount (5%):</dt>
+            <dd>-$20</dd>
+          </div>
+          <div class="order-summary__row order-summary__row--total">
+            <dt>Total Due Today:</dt>
+            <dd><strong>$380</strong></dd>
+          </div>
+        </dl>
+      </aside>
+
+    </div>
+  </main>
+
+  <%- include('partials/footerMin.ejs') %>
+
+</body>
+</html>
