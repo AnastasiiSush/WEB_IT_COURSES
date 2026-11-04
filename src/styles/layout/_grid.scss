@@ -1,4 +1,27 @@
-// _grid.scss
-@use "../abstracts/mixins" as *;
+// ==========================================
+// LAYOUT: Grid & Containers
+// ==========================================
 
-.container { @include container(); }
+@use '../abstracts' as *;
+
+.page {
+  @include container();
+  padding-block: rem(32);
+}
+
+// Сітка для списків карток (курси, категорії тощо)
+.courses-grid {
+  display: grid;
+  gap: rem(16);
+  grid-template-columns: 1fr; // Mobile (360px)
+
+  @include media-up(md) {
+    grid-template-columns: repeat(2, 1fr); // Tablet (768px)
+    gap: rem(20);
+  }
+
+  @include media-up(lg) {
+    grid-template-columns: repeat(3, 1fr); // Desktop (1280px+)
+    gap: rem(24);
+  }
+}

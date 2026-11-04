@@ -1,4 +1,151 @@
-// _footer.scss
-@use "../abstracts/mixins" as *;
+// ==========================================
+// COMPONENTS: Footer
+// ==========================================
+@use '../abstracts' as *;
 
-.u-footer { @include container(); padding: 24px 0; border-top: 1px solid rgba(255,255,255,.1); margin-top: 40px; }
+
+.footer {
+  width: 100%;
+  background-color: $color-surface;     // Світлий фон секції на всю ширину
+  padding-block: rem(64) rem(32);
+ border-top: none; // Зелена фірмова смужка зверху
+
+  &__content {
+    @include container();               // Обмежує ширину до 1200px і центрує контент
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(48);
+    padding-bottom: rem(48);
+    border-bottom: 1px solid rgba($color-surface-alt, 0.2); // Розділювальна лінія
+
+    @include media-up(lg) {
+      grid-template-columns: 1fr 2fr;   // Бренд зліва, 3 колонки навігації справа
+      align-items: start;
+    }
+  }
+
+  &__container {
+    @include container(); // Обмежує ширину до 1200px і центрує
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    align-items: center;
+    text-align: center;
+
+    @include media-up(md) {
+      flex-direction: row;
+      justify-content: space-between; // Копірайт зліва, посилання справа
+      text-align: left;
+    }
+  }
+
+  &__brand {
+    max-width: rem(320);
+  }
+
+  &__logo {
+    font-family: $font-heading;
+    font-size: rem(24);
+    font-weight: 700;
+    color: $color-accent;               // Зелений акцентний колір логотипа
+    display: inline-block;
+    margin-bottom: rem(16);
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+
+  &__tagline {
+    font-size: rem(14);
+    color: $color-text-muted;           // Приглушений сірий текст
+    line-height: 22px;
+    margin: 0;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: rem(32);
+
+    @include media-up(sm) {
+      grid-template-columns: repeat(3, 1fr); // 3 колонки для Courses, Company, Resources
+    }
+  }
+
+  &__column-title {
+    font-family: $font-heading;
+    font-size: rem(16);
+    font-weight: 600;
+    color: $color-text-main;            // Темний заголовок колонки
+    margin: 0 0 rem(16) 0;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+  }
+
+  &__link {
+    font-size: rem(14);
+    color: $color-text-muted;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;            // Акцентний зелений при наведенні
+    }
+  }
+
+  &__bottom {
+    @include container();               // Утримує нижню частину в межах 1200px
+    padding-top: rem(32);
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    align-items: center;
+    text-align: center;
+
+    @include media-up(md) {
+      flex-direction: row;
+      justify-content: space-between;   // Копірайт зліва, правові посилання справа
+      text-align: left;
+    }
+  }
+
+  &__copyright {
+    font-size: rem(13);
+    color: $color-text-muted;
+    margin: 0;
+  }
+
+  &__legal-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(24);
+    justify-content: center;
+
+    @include media-up(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__legal-link {
+    font-size: rem(13);
+    color: $color-text-muted;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
