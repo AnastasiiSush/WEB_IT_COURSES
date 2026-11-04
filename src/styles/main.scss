@@ -1,10 +1,18 @@
-// Main SCSS entry
-@use "abstracts/variables";
-@use "abstracts/functions";
-@use "abstracts/mixins";
-@use "base/reset";
-@use "base/typography";
-@use "layout/grid";
-@use "layout/header";
-@use "layout/footer";
-@use "pages/home";
+@use 'abstracts';
+
+@use 'base/reset';
+@use 'base/typography';
+
+@use 'components/card';
+@use 'components/button';
+@use 'components/badge';
+@use 'components/input';
+
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/grid';
+
+@use 'pages/home';
+@use 'pages/courses';
+@use 'pages/details';
+@use 'pages/enrollment';
