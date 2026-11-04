@@ -1,21 +1,46 @@
-// _mixins.scss
-@mixin container($max: 1200px) {
+// ==========================================
+// ABSTRACTS: Mixins
+// ==========================================
+@use 'sass:map';
+@use 'variables' as v;
+
+// Медіазапити (Mobile First: min-width)
+@mixin media-up($bp) {
+  // Використовуємо map.get замість застарілого map-get
+  $value: map.get(v.$breakpoints, $bp); 
+  
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Брейкпоінт '#{$bp}' не знайдено у змінній \$breakpoints.";
+  }
+}
+
+// Центрований контейнер сторінки
+@mixin container($max: v.$container-max) {
   width: 100%;
   max-width: $max;
   margin-inline: auto;
-  padding-inline: 16px;
+  padding-inline: v.$gutter-sm;
+  
+  @include media-up(md) { 
+grid-template-columns: repeat(2, 1fr);  }
 }
 
-@mixin flex-center($gap: 8px) {
+// Зручний флекс-контейнер
+@mixin flex($dir: row, $justify: flex-start, $align: stretch, $gap: 0) {
   display: flex;
-  align-items: center;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
   gap: $gap;
 }
 
-@mixin respond($breakpoint) {
-  @if $breakpoint == md {
-    @media (min-width: 768px) { @content; }
-  } @else if $breakpoint == lg {
-    @media (min-width: 1280px) { @content; }
-  }
+// Типографічні стилі
+@mixin text-style($size, $lh: 1.5, $weight: 400) {
+  font-size: $size;
+  line-height: $lh;
+  font-weight: $weight;
 }

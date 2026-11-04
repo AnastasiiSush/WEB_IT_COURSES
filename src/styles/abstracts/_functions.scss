@@ -1,6 +1,24 @@
-// _functions.scss
-@use "sass:math";
+@use 'sass:math';
+@use 'sass:color';
 
-@function rem($px, $base: 16) {
+$base-font-size: 16px;
+
+@function rem($px, $base: 16px) {
+  @if math.is-unitless($px) {
+    $px: $px * 1px;
+  }
+  
+  @if math.is-unitless($base) {
+    $base: $base * 1px;
+  }
+
   @return math.div($px, $base) * 1rem;
+}
+
+@function tint($c, $amount) {
+  @return color.mix(white, $c, $amount);
+}
+
+@function shade($c, $amount) {
+  @return color.mix(black, $c, $amount);
 }

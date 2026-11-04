@@ -1,14 +1,70 @@
-// _variables.scss
-$u-space-1: 4px;
-$u-space-2: 8px;
-$u-space-3: 12px;
-$u-space-4: 16px;
-$u-space-5: 24px;
+@use 'functions' as *;
 
-$u-font-base: 16px;
-$u-font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+$color-surface: #E7E7E7;
+$color-surface-alt: #3F6854;
+$color-text: #F0F6FC;
+$color-text-muted: #64748B;
+$color-accent: #10C488; 
+$color-text-main: #202020;
+$color-text-alt: #D0D0D0;
+$color-button-hover: #0F8B62;
+$color-button-disabled: #6B857C;
+$color-error: #932D2E;
 
-$u-color-bg: #0f172a;
-$u-color-text: #e2e8f0;
-$u-color-accent: #38bdf8;
-$u-color-muted: #94a3b8;
+$color-primary: $color-accent;
+$color-primary-dark: $color-button-hover;
+$color-border: $color-button-disabled;
+
+$font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+$font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+$line-height-base: 1.5;
+
+// DESKTOP
+$font-size-h1      : rem(40);
+$font-size-h2      : rem(30);
+$font-size-h3      : rem(22);
+$font-size-body    : rem(16);
+$font-size-caption : rem(13);
+
+$line-height-h1       :rem(48);
+$line-height-h2       :rem(36);
+$line-height-h3       :rem(22);
+$line-height-body     :rem(24);
+$line-height-caption  :rem(20);
+
+// MOBILE 
+$font-size-m-h1      : rem(28);
+$font-size-m-h2      : rem(24);
+$font-size-m-h3      : rem(20);
+$font-size-m-body    : rem(16);
+$font-size-m-caption : rem(13);
+
+$line-height-m-h1       :rem(34);
+$line-height-m-h2       :rem(28);
+$line-height-m-h3       :rem(22);
+$line-height-m-body     :rem(24);
+$line-height-m-caption  :rem(20);
+
+// Breakpoints (Mobile First)
+$breakpoints: (
+  sm: 360px,
+  md: 768px,
+  lg: 1280px
+);
+
+// Container & Spacing
+$container-max: 1200px;
+$gutter-sm: 16px;
+$gutter-md: 24px;
+
+$space: (
+  0: 0,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  6: 24px,
+  8: 32px,
+  10: 40px
+);
