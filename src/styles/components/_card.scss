@@ -1,0 +1,72 @@
+@use '../abstracts' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $color-surface-alt;
+  border-radius: rem(16);
+  overflow: hidden;
+
+  &__image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: rem(24);
+
+    @include media-up(md) {
+      padding: rem(32);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(20);
+  }
+
+  &__label {
+    font-size: rem(20);
+    font-weight: 600;
+  }
+
+  &__note {
+    font-size: rem(16);
+  }
+
+  &__title {
+    margin-bottom: rem(12);
+  }
+
+  &__text {
+    color: $color-text-alt;
+    margin-bottom: rem(32);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+
+  &--interactive {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

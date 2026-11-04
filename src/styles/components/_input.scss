@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+// ==========================================
+// COMPONENTS: Input Field (Search / Forms)
+// ==========================================
+
+.input {
+  width: 100%;
+  padding: rem(14) rem(20);
+  font-size: rem(15);
+  font-family: inherit;
+  color: $color-text-main;
+  background-color: rgba($color-text-main, 0.04);
+  border: 1px solid rgba($color-surface-alt, 0.3); // Тонка фірмова рамка
+  border-radius: rem(12);
+  outline: none;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    border-color: $color-accent;                  // Зелений акцент при фокусі
+    background-color: $color-surface;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.15); // М'яке світіння
+  }
+
+  // Модифікатор для пошуку (якщо потрібні специфічні відступи чи іконка в майбутньому)
+  &--search {
+    // Тут можна додати специфіку для пошуку, якщо знадобиться
+  }
+}

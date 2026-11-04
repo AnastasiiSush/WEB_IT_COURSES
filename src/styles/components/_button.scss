@@ -1,0 +1,25 @@
+/////////////////////////////////////////////
+@use '../abstracts' as *;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(12) rem(24);
+  font-size: $font-size-body;
+  font-weight: 600;
+  border-radius: rem(8);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &--primary {
+  background-color: $color-accent;
+  color: $color-text-main;
+  border: none;
+
+  &:hover {
+    background-color: $color-button-hover;
+    color: $color-text-main;
+  }
+}
+} 
