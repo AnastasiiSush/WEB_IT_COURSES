@@ -6,6 +6,7 @@ export default defineConfig({
   server: { port: 5173, open: true },
   preview: { port: 4173 },
   root: "src",
+  base: '/WEB_IT_COURSES/',
   build: {
     outDir: "../dist",
     emptyOutDir: true,
