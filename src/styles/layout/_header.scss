@@ -1,6 +1,3 @@
-// ==========================================
-// LAYOUT: Header
-// ==========================================
 @use '../abstracts' as *;
 
 .header {
@@ -57,7 +54,6 @@
     }
   }
 
-  // three-line icon drawn with box-shadow
   &__burger-icon {
     width: rem(20);
     height: 2px;

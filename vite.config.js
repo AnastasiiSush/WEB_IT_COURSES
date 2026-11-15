@@ -11,7 +11,6 @@ export default defineConfig({
     port: 4173 
   },
   root: "src",
-  // relative asset paths: the site works at https://<user>.github.io/<repo>/
   base: "./",
   build: {
     outDir: "../dist",

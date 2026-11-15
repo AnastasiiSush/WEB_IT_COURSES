@@ -1,9 +1,5 @@
-// ==========================================
-// LAYOUT: Main navigation
-// ==========================================
 @use '../abstracts' as *;
 
-// Mobile: hidden until the burger opens it (full-width row under the logo)
 .nav {
   display: none;
   flex-basis: 100%;

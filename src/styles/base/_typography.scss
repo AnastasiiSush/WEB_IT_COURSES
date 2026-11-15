@@ -1,12 +1,9 @@
-// ==========================================
-// BASE: Typography
-// ==========================================
 @use '../abstracts' as *;
 
 html {
   font-size: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: rem(96); // anchors are not hidden under the sticky header
+  scroll-padding-top: rem(96);
 }
 
 body {
