@@ -1,0 +1,21 @@
+// ==========================================
+// LAYOUT: Grid & Containers
+// ==========================================
+@use '../abstracts' as *;
+
+.page {
+  @include container();
+  padding-block: rem(32);
+}
+
+// Course cards on the catalog page (a sidebar takes the rest on desktop)
+.courses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(16);
+
+  @include media-up(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(24);
+  }
+}

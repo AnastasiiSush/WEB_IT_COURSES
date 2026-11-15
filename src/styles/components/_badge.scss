@@ -1,0 +1,26 @@
+// ==========================================
+// COMPONENTS: Badge
+// ==========================================
+@use '../abstracts' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+  width: fit-content;
+  padding: rem(6) rem(16);
+  border-radius: $radius-pill;
+  background-color: $color-surface-alt;
+  color: $color-text;
+  @include text-style($font-size-small, $line-height-caption, 600);
+
+  &--level {
+    background-color: $color-accent;
+    color: $color-text-main;
+  }
+
+  &--save {
+    background-color: $color-accent;
+    color: $color-text-main;
+  }
+}

@@ -1,0 +1,212 @@
+// ==========================================
+// PAGES: Enrollment / checkout
+// ==========================================
+@use '../abstracts' as *;
+
+.checkout-page {
+  width: 100%;
+  padding-block: rem(32) rem(64);
+  background-color: $color-surface-alt;
+
+  @include media-up(md) {
+    padding-block: rem(40) rem(80);
+  }
+
+  &__container {
+    @include container();
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(24);
+    align-items: start;
+
+    @include media-up(lg) {
+      grid-template-columns: 1fr rem(400);
+      gap: rem(40);
+    }
+  }
+}
+
+.checkout-form {
+  @include flex(column, flex-start, stretch, rem(28));
+  padding: rem(20);
+  border-radius: $radius-lg;
+  background-color: $color-surface;
+  box-shadow: $shadow-sm;
+
+  @include media-up(md) {
+    padding: rem(32);
+  }
+
+  &__step {
+    @include flex(column, flex-start, stretch, rem(16));
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  &__title {
+    margin-bottom: rem(4);
+    padding: 0;
+    font-size: rem(18);
+    font-weight: 700;
+    color: $color-text-main;
+  }
+
+  &__grid {
+    display: grid;
+    gap: rem(16);
+
+    &--2col {
+      @include media-up(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  &__submit-block {
+    @include flex(column, flex-start, stretch, rem(12));
+    margin-top: rem(8);
+  }
+}
+
+.payment-options {
+  @include flex(column, flex-start, stretch, rem(12));
+}
+
+.payment-option {
+  @include flex(row, flex-start, flex-start, rem(14));
+  padding: rem(16);
+  border: 1px solid rgba($color-text-muted, 0.3);
+  border-radius: $radius-md;
+  background-color: $color-field;
+  cursor: pointer;
+  @include transition(border-color);
+
+  &:hover,
+  &:has(:checked) {
+    border-color: $color-accent;
+  }
+
+  &__radio {
+    appearance: none;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+    width: rem(20);
+    height: rem(20);
+    margin: rem(2) 0 0;
+    border: 2px solid rgba($color-text-muted, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      width: rem(8);
+      height: rem(8);
+      border-radius: 50%;
+      background-color: $color-text-main;
+      transform: scale(0);
+      @include transition(transform);
+    }
+
+    &:checked {
+      background-color: $color-accent;
+      border-color: $color-accent;
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+  }
+
+  &__body {
+    @include flex(column, flex-start, stretch, rem(4));
+    flex-grow: 1;
+  }
+
+  &__header {
+    @include flex(row, space-between, center, rem(8));
+    flex-wrap: wrap;
+  }
+
+  &__label {
+    font-weight: 600;
+    color: $color-text-main;
+  }
+
+  &__desc {
+    font-size: $font-size-small;
+    color: $color-text-muted;
+  }
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(10);
+
+  @include media-up(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.security-note {
+  @include flex(row, center, center, rem(6));
+  margin: 0;
+  font-size: $font-size-caption;
+  text-align: center;
+}
+
+.order-summary {
+  @include flex(column, flex-start, stretch, rem(14));
+  padding: rem(24);
+  border-radius: $radius-lg;
+  background-color: $color-surface;
+  box-shadow: $shadow-sm;
+
+  @include media-up(lg) {
+    position: sticky;
+    top: rem(104); // below the sticky header
+  }
+
+  &__title,
+  &__course-name {
+    margin: 0;
+    color: $color-text-main;
+  }
+
+  &__details {
+    margin: 0;
+  }
+
+  &__divider {
+    width: 100%;
+    margin: rem(4) 0;
+    border: none;
+    border-top: 1px solid rgba($color-surface-alt, 0.3);
+  }
+
+  &__calc {
+    @include flex(column, flex-start, stretch, rem(12));
+    margin: 0;
+  }
+
+  &__row {
+    @include flex(row, space-between, center);
+    color: $color-text-muted;
+
+    &--discount {
+      color: $color-button-hover;
+    }
+
+    &--total {
+      padding-top: rem(10);
+      border-top: 1px dashed rgba($color-surface-alt, 0.6);
+      color: $color-text-main;
+    }
+  }
+
+  &__value {
+    margin: 0;
+  }
+}

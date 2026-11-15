@@ -1,0 +1,57 @@
+// ==========================================
+// BASE: Utilities
+// ==========================================
+@use '../abstracts' as *;
+
+@each $key, $value in $space {
+  .mt-#{$key} { margin-top: $value !important; }
+  .mb-#{$key} { margin-bottom: $value !important; }
+  .p-#{$key} { padding: $value !important; }
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.skip-link {
+  position: absolute;
+  top: rem(8);
+  left: rem(8);
+  z-index: $z-skip-link;
+  padding: rem(8) rem(16);
+  border-radius: $radius-sm;
+  background-color: $color-text-main;
+  color: $color-white;
+  transform: translateY(-200%);
+  @include transition(transform);
+
+  &:focus {
+    transform: none;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+@media print {
+  .header,
+  .footer,
+  .filters-form,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    background: $color-white;
+    color: $color-black;
+  }
+
+  .card {
+    break-inside: avoid;
+  }
+}

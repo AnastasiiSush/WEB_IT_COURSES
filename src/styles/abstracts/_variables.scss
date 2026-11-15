@@ -1,0 +1,106 @@
+@use 'functions' as *;
+
+// ==========================================
+// ABSTRACTS: Design tokens (from Figma /01-tokens)
+// ==========================================
+
+// Colors
+$color-surface: #E7E7E7;        // light sections
+$color-surface-alt: #3F6854;    // dark green sections / cards
+$color-text: #F0F6FC;           // text on dark surfaces
+$color-text-muted: #64748B;
+$color-accent: #10C488;
+$color-text-main: #202020;      // text on light surfaces
+$color-text-alt: #D0D0D0;
+$color-button-hover: #0F8B62;
+$color-button-disabled: #6B857C;
+$color-error: #932D2E;
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$color-primary: $color-accent;
+$color-primary-dark: $color-button-hover;
+$color-border: $color-button-disabled;
+$color-field: tint($color-surface, 70%);
+
+// Brand colors of payment providers
+$color-google-bg: #F8F9FA;
+$color-google-bg-hover: #F1F3F4;
+$color-google-text: #3C4043;
+$color-google-border: #DADCE0;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba($color-black, 0.04);
+$shadow-md: 0 4px 16px rgba($color-black, 0.08);
+$shadow-lg: 0 12px 32px rgba($color-black, 0.12);
+
+// Typography
+$font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+$font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+$line-height-base: 1.5;
+
+// DESKTOP
+$font-size-h1: rem(40);
+$font-size-h2: rem(30);
+$font-size-h3: rem(22);
+$font-size-body: rem(16);
+$font-size-small: rem(14);
+$font-size-caption: rem(13);
+
+$line-height-h1: rem(48);
+$line-height-h2: rem(36);
+$line-height-h3: rem(28);
+$line-height-body: rem(24);
+$line-height-caption: rem(20);
+
+// MOBILE
+$font-size-m-h1: rem(28);
+$font-size-m-h2: rem(24);
+$font-size-m-h3: rem(20);
+$font-size-m-body: rem(16);
+$font-size-m-caption: rem(13);
+
+$line-height-m-h1: rem(34);
+$line-height-m-h2: rem(28);
+$line-height-m-h3: rem(26);
+$line-height-m-body: rem(24);
+$line-height-m-caption: rem(20);
+
+// Breakpoints (Mobile First)
+$breakpoints: (
+  sm: 360px,
+  md: 768px,
+  lg: 1280px
+);
+
+// Container & Spacing
+$container-max: 1200px;
+$gutter-sm: 16px;
+$gutter-md: 24px;
+
+$space: (
+  0: 0,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  6: 24px,
+  8: 32px,
+  10: 40px
+);
+
+// Radii
+$radius-sm: rem(8);
+$radius-md: rem(12);
+$radius-lg: rem(16);
+$radius-xl: rem(24);
+$radius-pill: rem(100);
+
+// Layers
+$z-header: 100;
+$z-skip-link: 1000;
+
+// Motion
+$duration: (fast: 120ms, base: 200ms, slow: 320ms);
+$easing: cubic-bezier(0.2, 0, 0, 1);

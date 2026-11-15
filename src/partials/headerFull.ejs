@@ -1,0 +1,21 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="header__container">
+    <a class="header__logo" href="index.html">Success IT School</a>
+
+    <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="header__burger-icon" aria-hidden="true"></span>
+    </button>
+
+    <nav id="main-nav" class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html"<% if (active === 'home') { %> aria-current="page"<% } %>>Home</a></li>
+        <li><a class="nav__link" href="courses.html"<% if (active === 'courses') { %> aria-current="page"<% } %>>Courses</a></li>
+        <li><a class="nav__link" href="index.html#about">About us</a></li>
+        <li><a class="nav__link" href="#contacts">Contacts</a></li>
+      </ul>
+    </nav>
+
+    <a class="button button--primary header__cta" href="courses.html">Explore Courses</a>
+  </div>
+</header>

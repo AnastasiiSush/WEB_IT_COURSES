@@ -1,0 +1,76 @@
+// ==========================================
+// LAYOUT: Header
+// ==========================================
+@use '../abstracts' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  width: 100%;
+  padding-block: rem(16);
+  background-color: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  @include media-up(md) {
+    padding-block: rem(20);
+  }
+
+  &__container {
+    @include container();
+    @include flex(row, space-between, center, rem(16));
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    font-family: $font-heading;
+    font-size: rem(20);
+    font-weight: 700;
+    color: $color-accent;
+
+    @include media-up(md) {
+      font-size: rem(22);
+    }
+  }
+
+  &__cta {
+    display: none;
+
+    @include media-up(md) {
+      display: inline-flex;
+    }
+  }
+
+  &__burger {
+    @include flex(column, center, center);
+    width: rem(44);
+    height: rem(44);
+    padding: 0;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background: transparent;
+    color: $color-text-main;
+    cursor: pointer;
+
+    @include media-up(md) {
+      display: none;
+    }
+  }
+
+  // three-line icon drawn with box-shadow
+  &__burger-icon {
+    width: rem(20);
+    height: 2px;
+    background-color: currentColor;
+    box-shadow: 0 rem(-6) 0 currentColor, 0 rem(6) 0 currentColor;
+  }
+
+  &__support-link {
+    font-size: $font-size-small;
+    color: $color-text-muted;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+// ==========================================
+// ABSTRACTS: Mixins
+// ==========================================
+@use 'sass:map';
+@use 'variables' as v;
+
+// Media query (Mobile First: min-width only)
+@mixin media-up($bp) {
+  $value: map.get(v.$breakpoints, $bp);
+
+  @if $value == null {
+    @error "Unknown breakpoint: #{$bp}";
+  }
+
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+// Centered page container
+@mixin container($max: v.$container-max) {
+  width: 100%;
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: v.$gutter-sm;
+
+  @include media-up(md) {
+    padding-inline: v.$gutter-md;
+  }
+}
+
+// Flex container shortcut
+@mixin flex($dir: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Typography role
+@mixin text-style($size, $lh: 1.5, $weight: 400) {
+  font-size: $size;
+  line-height: $lh;
+  font-weight: $weight;
+}
+
+// Visible keyboard focus
+@mixin focus-ring($color: v.$color-accent) {
+  outline: 2px solid $color;
+  outline-offset: 2px;
+}
+
+// Transitions with shared timing tokens
+@mixin transition($props...) {
+  transition-property: $props;
+  transition-duration: map.get(v.$duration, base);
+  transition-timing-function: v.$easing;
+}
+
+// Hide visually, keep for screen readers
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

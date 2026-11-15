@@ -1,0 +1,43 @@
+// ==========================================
+// BASE: Reset
+// ==========================================
+
+// Загальний коробковий розрахунок для всіх елементів
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// Прибираємо стандартні зовнішні відступи тіла сторінки
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Запобігаємо виходу медіа-елементів за межі батьківських контейнерів
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Успадкування шрифтів для інтерактивних елементів форми
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+// Скидання маркерів списків для елементів з класами
+ul[class], ol[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Доступність: відключення/скорочення анімацій для користувачів, які цього вимагають в системі
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

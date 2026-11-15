@@ -1,0 +1,22 @@
+// 7-1 architecture: only @use here, no rules
+@use 'vendors';
+@use 'themes/default';
+
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/utilities';
+
+@use 'components/button';
+@use 'components/badge';
+@use 'components/input';
+@use 'components/card';
+
+@use 'layout/header';
+@use 'layout/nav';
+@use 'layout/footer';
+@use 'layout/grid';
+
+@use 'pages/home';
+@use 'pages/courses';
+@use 'pages/details';
+@use 'pages/enrollment';

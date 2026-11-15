@@ -1,0 +1,102 @@
+// ==========================================
+// COMPONENTS: Button
+// ==========================================
+@use '../abstracts' as *;
+
+.button {
+  @include flex(row, center, center, rem(8));
+  min-height: rem(44);
+  padding: rem(12) rem(24);
+  border: 1px solid transparent;
+  border-radius: $radius-sm;
+  font-family: inherit;
+  font-size: $font-size-body;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  @include transition(background-color, border-color, color);
+
+  &:focus-visible {
+    @include focus-ring($color-text-main);
+  }
+
+  &:disabled {
+    background-color: $color-button-disabled;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background-color: $color-accent;
+    color: $color-text-main;
+
+    &:hover {
+      background-color: $color-button-hover;
+      color: $color-text-main;
+    }
+
+    // toggle buttons that are not selected (quick filters)
+    &[aria-pressed='false'] {
+      background-color: transparent;
+      border-color: $color-accent;
+      color: $color-text-main;
+    }
+
+    &[aria-pressed='false']:hover {
+      background-color: rgba($color-accent, 0.15);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border-color: $color-accent;
+    color: $color-text-main;
+
+    &:hover {
+      background-color: rgba($color-accent, 0.15);
+      color: $color-text-main;
+    }
+  }
+
+  &--sm {
+    min-height: rem(36);
+    padding: rem(8) rem(16);
+    font-size: $font-size-small;
+  }
+
+  &--large {
+    min-height: rem(52);
+    padding: rem(14) rem(32);
+  }
+
+  &--pay {
+    padding-inline: rem(8);
+    border-color: rgba($color-text-muted, 0.3);
+    background-color: $color-field;
+    color: $color-text-main;
+
+    &:hover {
+      border-color: $color-accent;
+    }
+  }
+
+  &--apple {
+    background-color: $color-black;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-text-main;
+    }
+  }
+
+  &--google {
+    background-color: $color-google-bg;
+    border-color: $color-google-border;
+    color: $color-google-text;
+
+    &:hover {
+      background-color: $color-google-bg-hover;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+// ==========================================
+// LAYOUT: Main navigation
+// ==========================================
+@use '../abstracts' as *;
+
+// Mobile: hidden until the burger opens it (full-width row under the logo)
+.nav {
+  display: none;
+  flex-basis: 100%;
+  order: 3;
+
+  &--open {
+    display: block;
+  }
+
+  @include media-up(md) {
+    display: block;
+    flex-basis: auto;
+    order: 0;
+  }
+
+  &__list {
+    @include flex(column, flex-start, stretch, rem(4));
+    padding-block: rem(8);
+
+    @include media-up(md) {
+      @include flex(row, flex-start, center, rem(32));
+      padding-block: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding-block: rem(8);
+    font-weight: 500;
+    font-size: $font-size-body;
+    color: $color-text-muted;
+
+    @include media-up(md) {
+      padding-block: 0;
+    }
+
+    &:hover,
+    &[aria-current='page'] {
+      color: $color-accent;
+    }
+  }
+}

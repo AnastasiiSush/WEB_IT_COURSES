@@ -1,0 +1,14 @@
+// ==========================================
+// THEMES: Default (light/green) theme
+// Exposes design tokens as CSS custom properties for runtime use (LR 4).
+// ==========================================
+@use '../abstracts' as *;
+
+:root {
+  color-scheme: light;
+  --color-surface: #{$color-surface};
+  --color-surface-alt: #{$color-surface-alt};
+  --color-accent: #{$color-accent};
+  --color-text: #{$color-text};
+  --color-text-main: #{$color-text-main};
+}
