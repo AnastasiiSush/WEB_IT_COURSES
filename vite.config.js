@@ -3,10 +3,16 @@ import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { resolve } from "path";
 
 export default defineConfig({
-  server: { port: 5173, open: true },
-  preview: { port: 4173 },
+  server: { 
+    port: 5173, 
+    open: true 
+  },
+  preview: { 
+    port: 4173 
+  },
   root: "src",
-  base: '/WEB_IT_COURSES/',
+  // relative asset paths: the site works at https://<user>.github.io/<repo>/
+  base: "./",
   build: {
     outDir: "../dist",
     emptyOutDir: true,
@@ -17,6 +23,13 @@ export default defineConfig({
         courses: resolve(__dirname, "src/courses.html"),
         details: resolve(__dirname, "src/details.html"),
         enrollment: resolve(__dirname, "src/enrollment.html"),
+      },
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
       },
     },
   },
